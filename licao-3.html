@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lição 3: Orientação e acompanhamento · MOOC · Percurso CAMUL</title>
+  <meta name="description" content="Uma pessoa acabada de evacuar chega cansada, sob stress, a um espaço que nunca viu. Guiar bem é devolver-lhe orientação e autonomia, passo a passo.">
+  <meta name="theme-color" content="#FF6600">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Percurso CAMUL">
+  <meta property="og:title" content="Lição 3: Orientação e acompanhamento · MOOC · Percurso CAMUL">
+  <meta property="og:description" content="Uma pessoa acabada de evacuar chega cansada, sob stress, a um espaço que nunca viu. Guiar bem é devolver-lhe orientação e autonomia, passo a passo.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* aplica as preferências guardadas antes de a página aparecer (evita «piscar») */
+    (function () { var d = document.documentElement; d.classList.add('js'); try { var p = JSON.parse(localStorage.getItem('pc-prefs') || '{}'); for (var k in p) { if (p[k] && !/^(auto|md|padrao|normal)$/.test(p[k])) d.setAttribute('data-' + k, p[k]); } } catch (e) {} })();
+  </script>
+  <script src="js/site.js" defer></script>
+  <script src="data/mooc.js" defer></script>
+  <script src="data/quizzes.js" defer></script>
+  <script src="js/media.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/lesson.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo principal</a>
+
+<!-- Ícones (SVG) usados em todo o site -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/><path d="M7 9.8l5 1 5-1M12 10.8v3.4M12 14.2l-2.6 4M12 14.2l2.6 4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.2h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 10.2a2.2 2.2 0 1 0 0 3.6M17 10.2a2.2 2.2 0 1 0 0 3.6"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6h14M5 10h14M5 14h10M5 18h8"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></symbol>
+  <symbol id="i-list-check" viewBox="0 0 24 24"><path d="m3.5 6 1.5 1.5L8 4.5M3.5 13l1.5 1.5L8 11.5M11 6h9M11 13h9M11 19h9"/></symbol>
+  <symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3l1.8 4.7 4.7 1.8-4.7 1.8L11 16l-1.8-4.7L4.5 9.5l4.7-1.8z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 10 6-3.5v11l-6-3.5"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.5 21 7.5v9L12 21.5 3 16.5v-9z"/><path d="M3 7.5l9 5 9-5M12 12.5v9"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 1c0 1.8-2.5 2.2-2.5 3.8M12 17h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-slides" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.3-1-1.6-1-2.6 0-.9.7-1.7 1.7-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+  <symbol id="i-columns" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></symbol>
+  <symbol id="i-space" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a4.75 4.75 0 0 1 0 9.5 4.75 4.75 0 0 0 0 9.5"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></symbol>
+  <symbol id="i-scales" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
+  <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.3-9.2C1.4 7.4 3.6 4 7 4c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.6 1.6 0 0 0 5.9 21h12.2a1.6 1.6 0 0 0 1.4-2.5L14 9V3"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 0 1 0 19z" fill="currentColor"/></symbol>
+  <symbol id="i-align" viewBox="0 0 24 24"><path d="M4 5h16M4 10h10M4 15h16M4 20h10"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2.5-5 5-5 7.5 0s5 5 7.5 0 3.5-3.5 5-2"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="6" r="1.4"/><circle cx="12" cy="6" r="1.4"/><circle cx="18" cy="6" r="1.4"/><circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/><circle cx="6" cy="18" r="1.4"/><circle cx="12" cy="18" r="1.4"/><circle cx="18" cy="18" r="1.4"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M10 3.5a2 2 0 1 1 4 0V5h4a1 1 0 0 1 1 1v4h-1.5a2 2 0 1 0 0 4H19v4a1 1 0 0 1-1 1h-4v-1.5a2 2 0 1 0-4 0V19H6a1 1 0 0 1-1-1v-4h1.5a2 2 0 1 0 0-4H5V6a1 1 0 0 1 1-1h4z"/></symbol>
+  <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+</svg>
+
+<div class="app">
+<header class="site-header" id="topo" tabindex="-1">
+  <div class="sidebar-top">
+    <button type="button" class="sidebar-toggle" id="btn-sidebar" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"></use></svg><span class="visually-hidden" data-sidebar-label>Recolher o menu lateral</span></button>
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#FF6600"/><path d="M12.5 33.5c4-9 10.5 2 15.5-6.5s7.5-6 8-12.5" fill="none" stroke="#1B1612" stroke-width="3.6" stroke-linecap="round"/><circle cx="12.5" cy="33.5" r="3.4" fill="#1B1612"/><circle cx="36" cy="14.5" r="3.4" fill="#FFFFFF" stroke="#1B1612" stroke-width="2"/></svg>
+      <span><span class="brand-name">Percurso CAMUL</span><span class="brand-sub">Portefólio do Grupo 2 · ISEP</span></span>
+    </a>
+    <div class="tools">
+      <button type="button" class="tool-btn" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade" hidden>
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-a11y"></use></svg><span class="tool-label">Acessibilidade</span>
+      </button>
+      <div id="painel-acessibilidade" class="a11y-panel" role="region" aria-labelledby="painel-acessibilidade-titulo" hidden>
+        <h2 id="painel-acessibilidade-titulo">Preferências de leitura</h2>
+        <p>Ajuste a página às suas necessidades. As escolhas ficam guardadas neste navegador.</p>
+        <fieldset>
+          <legend>Tamanho do texto</legend>
+          <div class="seg">
+            <label><input type="radio" name="text" value="md"><span>100%</span></label>
+            <label><input type="radio" name="text" value="lg"><span>112%</span></label>
+            <label><input type="radio" name="text" value="xl"><span>125%</span></label>
+            <label><input type="radio" name="text" value="xxl"><span>150%</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Cores</legend>
+          <div class="seg">
+            <label><input type="radio" name="theme" value="auto"><span>Automático</span></label>
+            <label><input type="radio" name="theme" value="light"><span>Claro</span></label>
+            <label><input type="radio" name="theme" value="dark"><span>Escuro</span></label>
+            <label><input type="radio" name="theme" value="contrast"><span>Alto contraste</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Leitura e movimento</legend>
+          <label class="check-row"><input type="checkbox" name="font" value="legivel"><span><strong>Letra de leitura fácil</strong><small>Atkinson Hyperlegible, desenhada para pessoas com baixa visão</small></span></label>
+          <label class="check-row"><input type="checkbox" name="spacing" value="amplo"><span><strong>Mais espaço entre letras e linhas</strong><small>Ajuda na leitura com baixa visão ou dislexia</small></span></label>
+          <label class="check-row"><input type="checkbox" name="links" value="sublinhado"><span><strong>Destacar todas as ligações</strong><small>Sublinhado e negrito em todas as ligações</small></span></label>
+          <label class="check-row"><input type="checkbox" name="motion" value="reduzido"><span><strong>Reduzir animações</strong><small>Desliga transições e movimentos</small></span></label>
+        </fieldset>
+        <p class="visually-hidden" role="status" data-a11y-status></p>
+        <div class="panel-actions">
+          <button type="button" class="btn btn-quiet btn-sm" data-a11y-reset>Repor predefinições</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-a11y-close>Fechar</button>
+        </div>
+        <p style="font-size:.88rem;margin:.75rem 0 0"><a href="acessibilidade.html">Declaração de acessibilidade</a></p>
+      </div>
+      <button type="button" class="tool-btn nav-toggle" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span class="tool-label">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav" id="menu-principal" aria-label="Principal">
+    <ul>
+      <li><a href="index.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Início</span></a></li>
+      <li><a href="cor.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg><span>Estudo da Cor</span></a></li>
+      <li><a href="composicao.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layout"></use></svg><span>Composição Visual</span></a></li>
+      <li><a href="avatares.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span>Avatares IA</span></a></li>
+      <li class="nav-group">
+        <details open>
+          <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-graduation"></use></svg><span>MOOC</span><svg class="icon nav-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-right"></use></svg></summary>
+          <ul class="subnav">
+            <li><a href="mooc.html"><span class="subnav-num"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book"></use></svg></span><span>Visão geral do curso</span></a></li>
+            <li><a href="licao-1.html"><span class="subnav-num" aria-hidden="true">1</span><span><span class="visually-hidden">Lição 1: </span>Primeiro contacto</span></a></li>
+            <li><a href="licao-2.html"><span class="subnav-num" aria-hidden="true">2</span><span><span class="visually-hidden">Lição 2: </span>Receção e registo</span></a></li>
+            <li><a href="licao-3.html" aria-current="page"><span class="subnav-num" aria-hidden="true">3</span><span><span class="visually-hidden">Lição 3: </span>Orientação e acompanhamento</span></a></li>
+            <li><a href="licao-4.html"><span class="subnav-num" aria-hidden="true">4</span><span><span class="visually-hidden">Lição 4: </span>Acesso a apoios essenciais</span></a></li>
+            <li><a href="licao-5.html"><span class="subnav-num" aria-hidden="true">5</span><span><span class="visually-hidden">Lição 5: </span>Segurança e emergências</span></a></li>
+            <li><a href="processo.html"><span class="subnav-num"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"></use></svg></span><span>Como criámos o MOOC</span></a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="equipa.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg><span>Equipa</span></a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-foot">
+    <p>Grupo 2 · CAMUL · ISEP 2026/27</p>
+    <p><a href="acessibilidade.html">Declaração de acessibilidade</a></p>
+  </div>
+</header>
+
+<div class="page">
+<main id="conteudo" tabindex="-1">
+<div id="licao-app" data-licao="3">
+  <div class="container section">
+    <p>A carregar a Lição 3: Orientação e acompanhamento…</p>
+    <noscript><p>Esta página precisa de JavaScript para mostrar a lição. Pode descarregar os materiais na <a href="mooc.html">página do MOOC</a>.</p></noscript>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#FF6600"/><path d="M12.5 33.5c4-9 10.5 2 15.5-6.5s7.5-6 8-12.5" fill="none" stroke="#1B1612" stroke-width="3.6" stroke-linecap="round"/><circle cx="12.5" cy="33.5" r="3.4" fill="#1B1612"/><circle cx="36" cy="14.5" r="3.4" fill="#FFFFFF" stroke="#1B1612" stroke-width="2"/></svg><strong>Percurso CAMUL</strong></div>
+        <p>Portefólio multimédia do Grupo 2 na unidade curricular de Conceção e Autoria Multimédia (CAMUL) do Instituto Superior de Engenharia do Porto, ano letivo de 2026/2027.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <h2>Conteúdos</h2>
+        <ul>
+          <li><a href="cor.html">Estudo da cor: laranja</a></li>
+          <li><a href="composicao.html">Composição visual</a></li>
+          <li><a href="avatares.html">Avatares IA</a></li>
+          <li><a href="mooc.html">MOOC: apoio a pessoas com deficiência visual</a></li>
+          <li><a href="processo.html">Processo</a></li>
+          <li><a href="equipa.html">Equipa e projeto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Acessibilidade</h2>
+        <ul>
+          <li><a href="acessibilidade.html">Declaração de acessibilidade</a></li>
+          <li><a href="acessibilidade.html#como-usar">Como ajustar a leitura</a></li>
+          <li><a href="#conteudo">Voltar ao início da página</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Grupo 2: Adrian De Freitas, Henrique Ferreira, Leonor Gomes, Matilde Varela e Ricardo Dias. Trabalho académico sem fins comerciais.</p>
+      <p>As marcas e as personagens citadas no estudo da cor pertencem aos respetivos titulares e são usadas apenas para análise académica.</p>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+</body>
+</html>

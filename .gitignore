@@ -1,0 +1,9 @@
+# Ficheiros do sistema e temporários
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+*.tmp
+
+# Netlify CLI (se vier a ser usado)
+.netlify/

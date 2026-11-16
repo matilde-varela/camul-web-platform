@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lição do MOOC · Percurso CAMUL</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--
+    Página de passagem para ligações antigas (licao.html?n=2).
+    Cada lição tem agora a sua página: licao-1.html … licao-5.html.
+    (Alguns servidores locais, como o «npx serve», redirecionam licao.html para /licao e perdem o «?n=».)
+  -->
+  <script>
+    (function () {
+      var n = parseInt(new URLSearchParams(location.search).get('n'), 10);
+      if (!(n >= 1 && n <= 5)) n = 1;
+      location.replace('licao-' + n + '.html' + location.hash);
+    })();
+  </script>
+</head>
+<body>
+<main class="container section">
+  <h1>Lições do MOOC</h1>
+  <p>Esta página mudou de endereço. Escolha a lição:</p>
+  <ul>
+    <li><a href="licao-1.html">Lição 1: Primeiro contacto</a></li>
+    <li><a href="licao-2.html">Lição 2: Receção e registo</a></li>
+    <li><a href="licao-3.html">Lição 3: Orientação e acompanhamento</a></li>
+    <li><a href="licao-4.html">Lição 4: Acesso a apoios essenciais</a></li>
+    <li><a href="licao-5.html">Lição 5: Segurança e emergências</a></li>
+  </ul>
+  <p><a href="mooc.html">Ver a visão geral do MOOC</a></p>
+</main>
+</body>
+</html>

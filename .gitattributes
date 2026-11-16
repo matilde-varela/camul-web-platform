@@ -1,0 +1,8 @@
+# Texto com fim de linha LF; multimédia como binário
+* text=auto eol=lf
+*.mp4 binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.pdf binary
+*.woff2 binary

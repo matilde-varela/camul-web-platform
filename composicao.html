@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Composição visual · Percurso CAMUL</title>
+  <meta name="description" content="Módulo interativo de composição visual no design multimédia: regra dos terços, posicionamento de texto, espaço negativo, tipografia, contraste e equilíbrio.">
+  <meta name="theme-color" content="#FF6600">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Percurso CAMUL">
+  <meta property="og:title" content="Composição visual · Percurso CAMUL">
+  <meta property="og:description" content="Módulo interativo de composição visual no design multimédia: regra dos terços, posicionamento de texto, espaço negativo, tipografia, contraste e equilíbrio.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* aplica as preferências guardadas antes de a página aparecer (evita «piscar») */
+    (function () { var d = document.documentElement; d.classList.add('js'); try { var p = JSON.parse(localStorage.getItem('pc-prefs') || '{}'); for (var k in p) { if (p[k] && !/^(auto|md|padrao|normal)$/.test(p[k])) d.setAttribute('data-' + k, p[k]); } } catch (e) {} })();
+  </script>
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo principal</a>
+
+<!-- Ícones (SVG) usados em todo o site -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/><path d="M7 9.8l5 1 5-1M12 10.8v3.4M12 14.2l-2.6 4M12 14.2l2.6 4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.2h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 10.2a2.2 2.2 0 1 0 0 3.6M17 10.2a2.2 2.2 0 1 0 0 3.6"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6h14M5 10h14M5 14h10M5 18h8"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></symbol>
+  <symbol id="i-list-check" viewBox="0 0 24 24"><path d="m3.5 6 1.5 1.5L8 4.5M3.5 13l1.5 1.5L8 11.5M11 6h9M11 13h9M11 19h9"/></symbol>
+  <symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3l1.8 4.7 4.7 1.8-4.7 1.8L11 16l-1.8-4.7L4.5 9.5l4.7-1.8z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 10 6-3.5v11l-6-3.5"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.5 21 7.5v9L12 21.5 3 16.5v-9z"/><path d="M3 7.5l9 5 9-5M12 12.5v9"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 1c0 1.8-2.5 2.2-2.5 3.8M12 17h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-slides" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.3-1-1.6-1-2.6 0-.9.7-1.7 1.7-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+  <symbol id="i-columns" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></symbol>
+  <symbol id="i-space" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a4.75 4.75 0 0 1 0 9.5 4.75 4.75 0 0 0 0 9.5"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></symbol>
+  <symbol id="i-scales" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
+  <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.3-9.2C1.4 7.4 3.6 4 7 4c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.6 1.6 0 0 0 5.9 21h12.2a1.6 1.6 0 0 0 1.4-2.5L14 9V3"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 0 1 0 19z" fill="currentColor"/></symbol>
+  <symbol id="i-align" viewBox="0 0 24 24"><path d="M4 5h16M4 10h10M4 15h16M4 20h10"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2.5-5 5-5 7.5 0s5 5 7.5 0 3.5-3.5 5-2"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="6" r="1.4"/><circle cx="12" cy="6" r="1.4"/><circle cx="18" cy="6" r="1.4"/><circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/><circle cx="6" cy="18" r="1.4"/><circle cx="12" cy="18" r="1.4"/><circle cx="18" cy="18" r="1.4"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M10 3.5a2 2 0 1 1 4 0V5h4a1 1 0 0 1 1 1v4h-1.5a2 2 0 1 0 0 4H19v4a1 1 0 0 1-1 1h-4v-1.5a2 2 0 1 0-4 0V19H6a1 1 0 0 1-1-1v-4h1.5a2 2 0 1 0 0-4H5V6a1 1 0 0 1 1-1h4z"/></symbol>
+  <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+</svg>
+
+<div class="app">
+<header class="site-header" id="topo" tabindex="-1">
+  <div class="sidebar-top">
+    <button type="button" class="sidebar-toggle" id="btn-sidebar" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"></use></svg><span class="visually-hidden" data-sidebar-label>Recolher o menu lateral</span></button>
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#FF6600"/><path d="M12.5 33.5c4-9 10.5 2 15.5-6.5s7.5-6 8-12.5" fill="none" stroke="#1B1612" stroke-width="3.6" stroke-linecap="round"/><circle cx="12.5" cy="33.5" r="3.4" fill="#1B1612"/><circle cx="36" cy="14.5" r="3.4" fill="#FFFFFF" stroke="#1B1612" stroke-width="2"/></svg>
+      <span><span class="brand-name">Percurso CAMUL</span><span class="brand-sub">Portefólio do Grupo 2 · ISEP</span></span>
+    </a>
+    <div class="tools">
+      <button type="button" class="tool-btn" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade" hidden>
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-a11y"></use></svg><span class="tool-label">Acessibilidade</span>
+      </button>
+      <div id="painel-acessibilidade" class="a11y-panel" role="region" aria-labelledby="painel-acessibilidade-titulo" hidden>
+        <h2 id="painel-acessibilidade-titulo">Preferências de leitura</h2>
+        <p>Ajuste a página às suas necessidades. As escolhas ficam guardadas neste navegador.</p>
+        <fieldset>
+          <legend>Tamanho do texto</legend>
+          <div class="seg">
+            <label><input type="radio" name="text" value="md"><span>100%</span></label>
+            <label><input type="radio" name="text" value="lg"><span>112%</span></label>
+            <label><input type="radio" name="text" value="xl"><span>125%</span></label>
+            <label><input type="radio" name="text" value="xxl"><span>150%</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Cores</legend>
+          <div class="seg">
+            <label><input type="radio" name="theme" value="auto"><span>Automático</span></label>
+            <label><input type="radio" name="theme" value="light"><span>Claro</span></label>
+            <label><input type="radio" name="theme" value="dark"><span>Escuro</span></label>
+            <label><input type="radio" name="theme" value="contrast"><span>Alto contraste</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Leitura e movimento</legend>
+          <label class="check-row"><input type="checkbox" name="font" value="legivel"><span><strong>Letra de leitura fácil</strong><small>Atkinson Hyperlegible, desenhada para pessoas com baixa visão</small></span></label>
+          <label class="check-row"><input type="checkbox" name="spacing" value="amplo"><span><strong>Mais espaço entre letras e linhas</strong><small>Ajuda na leitura com baixa visão ou dislexia</small></span></label>
+          <label class="check-row"><input type="checkbox" name="links" value="sublinhado"><span><strong>Destacar todas as ligações</strong><small>Sublinhado e negrito em todas as ligações</small></span></label>
+          <label class="check-row"><input type="checkbox" name="motion" value="reduzido"><span><strong>Reduzir animações</strong><small>Desliga transições e movimentos</small></span></label>
+        </fieldset>
+        <p class="visually-hidden" role="status" data-a11y-status></p>
+        <div class="panel-actions">
+          <button type="button" class="btn btn-quiet btn-sm" data-a11y-reset>Repor predefinições</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-a11y-close>Fechar</button>
+        </div>
+        <p style="font-size:.88rem;margin:.75rem 0 0"><a href="acessibilidade.html">Declaração de acessibilidade</a></p>
+      </div>
+      <button type="button" class="tool-btn nav-toggle" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span class="tool-label">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav" id="menu-principal" aria-label="Principal">
+    <ul>
+      <li><a href="index.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg><span>Início</span></a></li>
+      <li><a href="cor.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg><span>Estudo da Cor</span></a></li>
+      <li><a href="composicao.html" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layout"></use></svg><span>Composição Visual</span></a></li>
+      <li><a href="avatares.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sparkles"></use></svg><span>Avatares IA</span></a></li>
+      <li class="nav-group">
+        <details>
+          <summary><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-graduation"></use></svg><span>MOOC</span><svg class="icon nav-chevron" aria-hidden="true" focusable="false"><use href="#i-chevron-right"></use></svg></summary>
+          <ul class="subnav">
+            <li><a href="mooc.html"><span class="subnav-num"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-book"></use></svg></span><span>Visão geral do curso</span></a></li>
+            <li><a href="licao-1.html"><span class="subnav-num" aria-hidden="true">1</span><span><span class="visually-hidden">Lição 1: </span>Primeiro contacto</span></a></li>
+            <li><a href="licao-2.html"><span class="subnav-num" aria-hidden="true">2</span><span><span class="visually-hidden">Lição 2: </span>Receção e registo</span></a></li>
+            <li><a href="licao-3.html"><span class="subnav-num" aria-hidden="true">3</span><span><span class="visually-hidden">Lição 3: </span>Orientação e acompanhamento</span></a></li>
+            <li><a href="licao-4.html"><span class="subnav-num" aria-hidden="true">4</span><span><span class="visually-hidden">Lição 4: </span>Acesso a apoios essenciais</span></a></li>
+            <li><a href="licao-5.html"><span class="subnav-num" aria-hidden="true">5</span><span><span class="visually-hidden">Lição 5: </span>Segurança e emergências</span></a></li>
+            <li><a href="processo.html"><span class="subnav-num"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"></use></svg></span><span>Como criámos o MOOC</span></a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="equipa.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg><span>Equipa</span></a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-foot">
+    <p>Grupo 2 · CAMUL · ISEP 2026/27</p>
+    <p><a href="acessibilidade.html">Declaração de acessibilidade</a></p>
+  </div>
+</header>
+
+<div class="page">
+<main id="conteudo" tabindex="-1">
+<!-- Cena partilhada (ilustração vetorial) usada nos exemplos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/><stop offset="0.45" stop-color="#312e81"/><stop offset="0.8" stop-color="#c2410c"/><stop offset="1" stop-color="#fdba74"/>
+    </linearGradient>
+    <linearGradient id="sea-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a3412"/><stop offset="0.25" stop-color="#1e3a8a"/><stop offset="1" stop-color="#0b1e4a"/>
+    </linearGradient>
+    <symbol id="scene-bg" viewBox="0 0 900 500">
+      <rect width="900" height="334" fill="url(#sky-grad)"/>
+      <rect y="333" width="900" height="167" fill="url(#sea-grad)"/>
+      <g stroke="#93c5fd" stroke-opacity=".25" stroke-width="2" stroke-linecap="round" fill="none"><path d="M40 380h90M200 410h120M420 385h80M620 430h140M760 395h90M90 455h110M470 470h130"/></g>
+      <g stroke="#e2e8f0" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M730 90q10-12 20 0q10-12 20 0M790 125q7-9 14 0q7-9 14 0"/></g>
+      <polygon points="300,167 0,120 0,215" fill="#fde68a" fill-opacity=".14"/>
+      <path d="M195 345Q235 306 300 308Q365 306 415 345Z" fill="#111827"/>
+      <polygon points="287,179 313,179 324,312 276,312" fill="#f8fafc"/>
+      <polygon points="283.5,215 316.5,215 318.5,238 281.5,238" fill="#dc2626"/>
+      <polygon points="279.5,265 320.5,265 322.5,288 277.5,288" fill="#dc2626"/>
+      <rect x="278" y="174" width="44" height="6" rx="1" fill="#1f2937"/>
+      <rect x="285" y="155" width="30" height="20" fill="#fde68a"/>
+      <polygon points="281,155 319,155 300,136" fill="#1f2937"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Módulo interativo</p>
+    <h1>Composição visual no design multimédia</h1>
+    <p class="card-meta">
+      <span class="badge"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-layout"></use></svg>6 temas</span>
+    </p>
+    <p class="lead">A composição visual é a arte de organizar elementos visuais (imagens, texto, formas e cores) de forma equilibrada e atrativa num espaço, criando narrativas visuais com impacto.</p>
+  </div>
+</div>
+
+<div class="container" style="padding-bottom:3rem">
+  <p class="muted">Escolha um dos seis temas, ou siga-os por ordem com o botão «Tema seguinte» no fim de cada um. Com o teclado, use as setas <kbd>←</kbd> e <kbd>→</kbd> para mudar de tema.</p>
+  <div class="tabs" data-tabs data-tabs-label="Temas de composição visual" data-tabs-item="Tema">
+
+    <!-- ===================== 1. Introdução ===================== -->
+    <section class="tab-panel" id="principios" data-tab-label="Os 8 princípios" data-tab-icon="info" aria-labelledby="h-principios">
+      <h2 id="h-principios">Os 8 princípios fundamentais</h2>
+      <div class="grid principles">
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-scales"></use></svg></span><h3>Equilíbrio</h3><p>Distribuição do peso visual, criando estabilidade, simétrica ou assimétrica.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-target"></use></svg></span><h3>Ênfase</h3><p>Criação de pontos focais que chamam a atenção para o mais importante.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-align"></use></svg></span><h3>Alinhamento</h3><p>Posicionamento estratégico que cria ordem e ligações visuais claras.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-maximize"></use></svg></span><h3>Proporção</h3><p>Relação de tamanho entre os elementos, que estabelece hierarquia.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-wave"></use></svg></span><h3>Movimento</h3><p>Guiar o olhar de quem vê através de caminhos visuais deliberados.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-contrast"></use></svg></span><h3>Contraste</h3><p>Diferenças notórias (de cor, de tamanho) que distinguem elementos e criam interesse.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-dots"></use></svg></span><h3>Padrão</h3><p>Elementos repetidos que criam ritmo e consistência visual.</p></div>
+        <div class="card"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-puzzle"></use></svg></span><h3>Unidade</h3><p>A relação coesa entre tudo, para que o design pareça completo e integrado.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. Regra dos terços ===================== -->
+    <section class="tab-panel" id="tercos" data-tab-label="Regra dos terços" data-tab-icon="grid" aria-labelledby="h-tercos">
+      <h2 id="h-tercos">A regra dos terços</h2>
+      <p class="lead" style="font-size:1.12rem">Uma diretriz de enquadramento que divide a imagem em <strong>nove retângulos iguais</strong>, com duas linhas verticais e duas horizontais. Em vez de colocar o assunto no centro, alinhamo-lo com essas linhas ou, de preferência, com os quatro <strong>pontos de interseção</strong>, onde o olhar tende a pousar naturalmente.</p>
+
+      <ol class="steps" style="margin:1.5rem 0 2rem">
+        <li><h3>Divida o enquadramento</h3><p>Imagine (ou ative na câmara ou no editor) uma grelha 3×3 sobre a imagem.</p></li>
+        <li><h3>Posicione o assunto</h3><p>Coloque o elemento principal sobre uma linha vertical, de preferência numa interseção.</p></li>
+        <li><h3>Alinhe o horizonte</h3><p>Faça coincidir horizontes e linhas fortes com uma linha horizontal, nunca a meio.</p></li>
+      </ol>
+
+      <div class="panel">
+        <div class="btn-row" style="justify-content:space-between;margin-bottom:1rem">
+          <h3 style="margin:0">Exemplo prático: o farol ao entardecer</h3>
+          <button type="button" class="btn btn-quiet btn-sm" aria-pressed="true" data-toggle-target="thirds-grid">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-grid"></use></svg>Mostrar a grelha dos terços
+          </button>
+        </div>
+        <div class="split wide-left" style="align-items:start">
+          <div class="scene">
+            <svg viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de um farol ao entardecer, com a grelha da regra dos terços: o farol está na linha vertical esquerda, o sol na interseção superior direita e o horizonte na linha horizontal inferior.">
+              <use href="#scene-bg" width="900" height="500"/>
+              <circle cx="600" cy="167" r="95" fill="#fde68a" fill-opacity=".18"/>
+              <circle cx="600" cy="167" r="38" fill="#fde68a"/>
+              <g stroke="#fde68a" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"><path d="M570 350h60M575 372h50M582 394h36M590 416h20"/></g>
+              <g id="thirds-grid">
+                <g stroke="#ffffff" stroke-opacity=".85" stroke-width="1.5" stroke-dasharray="7 5">
+                  <line x1="300" y1="0" x2="300" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+                  <line x1="0" y1="166.7" x2="900" y2="166.7"/><line x1="0" y1="333.3" x2="900" y2="333.3"/>
+                </g>
+                <circle cx="300" cy="166.7" r="11" fill="none" stroke="#fb923c" stroke-width="3"/>
+                <circle cx="600" cy="166.7" r="11" fill="none" stroke="#fb923c" stroke-width="3"/>
+                <circle cx="300" cy="333.3" r="5" fill="#ffffff" fill-opacity=".8"/>
+                <circle cx="600" cy="333.3" r="5" fill="#ffffff" fill-opacity=".8"/>
+                <g font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">
+                  <circle cx="355" cy="118" r="15" fill="#ea580c" stroke="#fff" stroke-width="2"/><text x="355" y="124">1</text>
+                  <circle cx="655" cy="118" r="15" fill="#ea580c" stroke="#fff" stroke-width="2"/><text x="655" y="124">2</text>
+                  <circle cx="810" cy="300" r="15" fill="#ea580c" stroke="#fff" stroke-width="2"/><text x="810" y="306">3</text>
+                  <circle cx="460" cy="60" r="15" fill="#ea580c" stroke="#fff" stroke-width="2"/><text x="460" y="66">4</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h4>Como ler esta imagem</h4>
+            <ol class="thirds-legend">
+              <li><span class="dot-num" aria-hidden="true">1</span><p style="margin:0"><strong>Assunto principal.</strong> A lanterna do farol está na interseção superior esquerda e a torre sobre a linha vertical esquerda.</p></li>
+              <li><span class="dot-num" aria-hidden="true">2</span><p style="margin:0"><strong>Ponto de apoio.</strong> O sol ocupa a interseção superior direita e equilibra o peso visual do farol.</p></li>
+              <li><span class="dot-num" aria-hidden="true">3</span><p style="margin:0"><strong>Horizonte.</strong> Assenta na linha horizontal inferior: dois terços de céu, um terço de mar.</p></li>
+              <li><span class="dot-num" aria-hidden="true">4</span><p style="margin:0"><strong>Espaço negativo.</strong> O céu vazio entre os dois focos deixa a imagem respirar e é um bom lugar para texto.</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2.5rem">Vantagens desta regra</h3>
+      <div class="grid grid-4">
+        <div class="card"><h4>Composição dinâmica</h4><p>Evita layouts estáticos e centrados. A assimetria natural gera energia e tensão visual.</p></div>
+        <div class="card"><h4>Equilíbrio visual</h4><p>Distribui o peso de forma harmoniosa, mais confortável para o olhar.</p></div>
+        <div class="card"><h4>Direção e movimento</h4><p>O espaço livre à frente do assunto sugere para onde olha ou se desloca.</p></div>
+        <div class="card"><h4>Espaço negativo</h4><p>Deixa os elementos respirar e cria uma zona limpa para texto e interface.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. Posicionamento e texto ===================== -->
+    <section class="tab-panel" id="texto" data-tab-label="Posicionamento e texto" data-tab-icon="columns" aria-labelledby="h-texto">
+      <h2 id="h-texto">Posicionamento de texto e padrões de leitura</h2>
+      <div class="callout callout-brand"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"></use></svg>
+        <div><p><strong>A psicologia do padrão em «Z».</strong> As audiências ocidentais processam a informação visual da <strong>esquerda para a direita</strong> e de <strong>cima para baixo</strong>. Começam no canto superior esquerdo (ideal para logótipos ou títulos principais) e terminam no canto inferior direito.</p></div>
+      </div>
+      <h3>Exemplo prático: certo e errado</h3>
+      <p>Ao compor texto sobre uma imagem, evite centrá-lo sobre o assunto. Use o espaço vazio que a própria composição oferece. Os dois exemplos usam a mesma imagem e o mesmo título.</p>
+      <div class="dodont">
+        <article class="dd-card dont" aria-labelledby="dd-dont">
+          <p class="dd-head" id="dd-dont"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-x-circle"></use></svg>A evitar</p>
+          <div class="scene" role="img" aria-label="Exemplo a evitar: o título «Verão à beira-mar» está centrado por cima do farol, tapando-o.">
+            <svg viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-bg" width="900" height="500"/></svg>
+            <div class="overlay-text overlay-center" aria-hidden="true"><h3>VERÃO À<br>BEIRA-MAR</h3><p>Descubra as novas tendências</p></div>
+          </div>
+          <div class="dd-body"><ul class="x-list" style="margin:0">
+            <li><strong>Texto no centro exato</strong>, por cima do assunto: o farol fica tapado.</li>
+            <li><strong>Sem proteção de fundo:</strong> o título atravessa o horizonte e zonas de luz e sombra, o que prejudica a leitura.</li>
+            <li><strong>Composição estática:</strong> tudo se concentra no meio e a imagem perde dinamismo.</li>
+          </ul></div>
+        </article>
+        <article class="dd-card do" aria-labelledby="dd-do">
+          <p class="dd-head" id="dd-do"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"></use></svg>Recomendado</p>
+          <div class="scene" role="img" aria-label="Exemplo recomendado: a imagem está espelhada, o farol fica no terço direito e o título «Verão à beira-mar» está alinhado à esquerda, sobre o céu vazio, com um gradiente escuro discreto e um botão «Comprar».">
+            <svg viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" style="transform:scaleX(-1)" aria-hidden="true"><use href="#scene-bg" width="900" height="500"/></svg>
+            <div class="overlay-text overlay-left" aria-hidden="true"><h3>VERÃO À<br>BEIRA-MAR</h3><p>Descubra as novas tendências</p><span class="fake-btn">Comprar</span></div>
+          </div>
+          <div class="dd-body"><ul class="check-list" style="margin:0">
+            <li><strong>Assunto num terço:</strong> o farol assenta na linha direita e continua totalmente visível.</li>
+            <li><strong>Texto no espaço negativo,</strong> alinhado à esquerda, onde começa o padrão de leitura em Z.</li>
+            <li><strong>Gradiente discreto</strong> que garante contraste sem esconder a imagem.</li>
+          </ul></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 4. Espaço negativo ===================== -->
+    <section class="tab-panel" id="espaco" data-tab-label="Espaço negativo e positivo" data-tab-icon="space" aria-labelledby="h-espaco">
+      <h2 id="h-espaco">Espaço positivo e negativo</h2>
+      <p>O <strong>espaço positivo</strong> é a área ocupada pelo conteúdo principal (imagens, texto). O <strong>espaço negativo</strong> (ou espaço em branco) são as áreas vazias, os respiros entre os elementos. Não tem de ser branco: basta estar livre de conteúdo. É essencial para evitar o cansaço visual.</p>
+      <div class="panel" style="margin-top:1.5rem">
+        <h3 class="center">A importância do <span lang="en">padding</span> e da margem</h3>
+        <div class="space-demo">
+          <figure class="figure">
+            <div class="cramped" role="img" aria-label="Cartão de curso apertado: imagem, título, texto e botão encostados uns aos outros, quase sem margens.">
+              <div class="ph"></div>
+              <div class="cramped-body" aria-hidden="true"><b>Masterclass de Web Design</b><p>Neste curso vai aprender tudo.Sem espaços tudo fica espremido.A falta de margens causa stress.Ninguém gosta de ler textos assim.</p><span>Inscrever</span></div>
+            </div>
+            <figcaption><span class="badge" style="background:var(--err-tint)"><svg class="icon verdict-err" aria-hidden="true" focusable="false"><use href="#i-x-circle"></use></svg>Design poluído</span><br>Falta de espaço negativo: os elementos lutam por atenção e causam claustrofobia visual.</figcaption>
+          </figure>
+          <figure class="figure">
+            <div class="roomy">
+              <div class="ph"></div>
+              <div class="roomy-body"><p class="eyebrow">Novo curso</p><b>Masterclass de Web Design</b><p>Com margens generosas e respiros visuais, a experiência flui. O design transmite confiança, calma e profissionalismo.</p><span aria-hidden="true">Inscrever agora</span></div>
+            </div>
+            <figcaption><span class="badge badge-ok"><svg class="icon verdict-ok" aria-hidden="true" focusable="false"><use href="#i-check-circle"></use></svg>Bom uso</span><br>Margens e <span lang="en">padding</span> generosos: o espaço negativo emoldura o conteúdo e melhora a leitura.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. Tipografia e contraste ===================== -->
+    <section class="tab-panel" id="tipografia" data-tab-label="Tipografia e contraste" data-tab-icon="type" aria-labelledby="h-tipografia">
+      <h2 id="h-tipografia">Tipografia e hierarquia de contraste</h2>
+      <p>A escolha da fonte define a «voz» do projeto. O contraste garante a acessibilidade e conduz o olhar para a informação mais importante.</p>
+      <div class="grid grid-2" style="margin:1.5rem 0 2.5rem">
+        <div class="card center">
+          <p aria-hidden="true" style="font-family:'Playfair Display',Georgia,serif;font-size:4rem;line-height:1;margin:0 auto">Aa</p>
+          <h3>Fontes serifadas</h3>
+          <p>Têm pequenos traços decorativos nas extremidades. Transmitem elegância, formalidade, tradição e autoridade (marcas de luxo, jornais). Os títulos desta plataforma usam a Playfair Display.</p>
+          <p><span class="badge">Times New Roman, Georgia, Playfair Display</span></p>
+        </div>
+        <div class="card center">
+          <p aria-hidden="true" style="font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:4rem;line-height:1;margin:0 auto">Aa</p>
+          <h3>Fontes não serifadas</h3>
+          <p>Linhas retas e limpas, sem ornamentos. Modernas, amigáveis, minimalistas e muito legíveis em ecrãs. O texto desta plataforma usa a Inter.</p>
+          <p><span class="badge">Arial, Helvetica, Roboto, Inter</span></p>
+        </div>
+      </div>
+
+      <h3>Criar hierarquia visual com texto</h3>
+      <div class="hierarchy-demo">
+        <p class="h-main">TÍTULO PRINCIPAL</p>
+        <p class="h-sub">Subtítulo de apoio, com menos peso e outra cor.</p>
+        <p class="h-body">Este é o texto de corpo. É mais pequeno, mais leve e tem um espaçamento entre linhas generoso, para facilitar a leitura longa. Reparou como os seus olhos leram primeiro o título enorme, depois o subtítulo e, por fim, este bloco? Isso é <strong>hierarquia visual</strong>, criada variando o tamanho, o peso e a cor.</p>
+      </div>
+
+      <h3 style="margin-top:2.5rem">Exemplo prático: contraste de cores</h3>
+      <div class="grid grid-2">
+        <div class="dd-card do">
+          <p class="dd-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check-circle"></use></svg>Aprovado: cores com bom contraste</p>
+          <div class="dd-sample" style="background:#111827;color:#F9FAFB">
+            <p style="font-size:1.6rem;font-weight:800;margin:0 auto .5rem;color:#fff">Cores harmoniosas</p>
+            <p style="margin:0 auto;color:#D1D5DB">Fundo muito escuro com texto muito claro. Legibilidade perfeita e requisitos de acessibilidade cumpridos.</p>
+          </div>
+          <p class="dd-body" style="margin:0">Texto branco e cinzento-claro sobre fundo quase preto: contraste de <strong>17,7:1</strong> no título e <strong>12:1</strong> no texto, muito acima do mínimo de 4,5:1 das WCAG.</p>
+        </div>
+        <div class="dd-card dont">
+          <p class="dd-head"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-x-circle"></use></svg>Reprovado: cores em conflito</p>
+          <div role="img" aria-label="Exemplo propositadamente ilegível: texto azul-escuro e preto sobre fundo laranja-escuro." class="dd-sample" style="background:#9A3412">
+            <p aria-hidden="true" style="font-size:1.6rem;font-weight:800;margin:0 auto .5rem;color:#1E3A8A">Cores em conflito</p>
+            <p aria-hidden="true" style="margin:0 auto;color:#111;font-weight:700">Fundo laranja-escuro com texto azul-escuro. O contraste é péssimo e cansa a vista.</p>
+          </div>
+          <p class="dd-body" style="margin:0">Este exemplo é <strong>propositadamente ilegível</strong>. O título diz «Cores em conflito» e o texto «Fundo laranja-escuro com texto azul-escuro. O contraste é péssimo e cansa a vista.» Contraste de <strong>1,4:1</strong> no título e <strong>2,6:1</strong> no texto, muito abaixo do mínimo de 4,5:1.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. Equilíbrio ===================== -->
+    <section class="tab-panel" id="equilibrio" data-tab-label="Equilíbrio e peso" data-tab-icon="scales" aria-labelledby="h-equilibrio">
+      <h2 id="h-equilibrio">Equilíbrio e peso visual</h2>
+      <p>O equilíbrio visual garante que a composição não parece «tombar» para um lado. O <strong>peso visual</strong> é a capacidade que um elemento tem de atrair o olhar: elementos grandes, escuros e complexos «pesam» mais do que elementos pequenos, claros e simples.</p>
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <div class="card">
+          <h3>Equilíbrio simétrico <span class="muted" style="font-weight:500">(formal e espelhado)</span></h3>
+          <div class="balance-box" role="img" aria-label="Dois quadrados laranja iguais, um de cada lado de um eixo central tracejado.">
+            <div class="balance-axis"></div>
+            <div class="blk" style="width:7rem;height:7rem;left:calc(50% - 9rem);top:calc(50% - 3.5rem);background:#FF6600">A</div>
+            <div class="blk" style="width:7rem;height:7rem;left:calc(50% + 2rem);top:calc(50% - 3.5rem);background:#FF6600">A</div>
+          </div>
+          <p>Elementos idênticos distribuídos de forma igual de cada lado de um eixo central. Transmite <strong>estabilidade, ordem, confiança e tradição</strong>. Muito usado em convites formais, arquitetura clássica e layouts corporativos.</p>
+        </div>
+        <div class="card">
+          <h3>Equilíbrio assimétrico <span class="muted" style="font-weight:500">(dinâmico e moderno)</span></h3>
+          <div class="balance-box" role="img" aria-label="Um quadrado grande e escuro à esquerda, equilibrado por três formas pequenas e claras à direita, mais afastadas do eixo central.">
+            <div class="balance-axis"></div>
+            <div class="blk" style="width:7.5rem;height:7.5rem;left:1.5rem;bottom:1.5rem;background:#E11D48;color:#fff">PESADO</div>
+            <div class="blk" style="width:3.75rem;height:3.75rem;right:1rem;bottom:1.5rem;background:#93C5FD;border-radius:50%;font-size:.8rem">leve</div>
+            <div class="blk" style="width:3rem;height:3rem;right:3.5rem;top:2.5rem;background:#FCD34D;transform:rotate(12deg);font-size:.75rem">leve</div>
+            <div class="blk" style="width:2.5rem;height:2.5rem;right:8rem;top:1.5rem;background:#6EE7B7;border-radius:50%"></div>
+          </div>
+          <p>Um elemento «pesado» de um lado é equilibrado por vários elementos «leves» do outro, como numa balança. Cria composições <strong>vibrantes, modernas, enérgicas e envolventes</strong>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<section class="section-tight" aria-labelledby="creditos-comp">
+  <div class="container">
+    <h2 id="creditos-comp" style="font-size:1.3rem;font-family:var(--font-body)">Créditos</h2>
+    <p class="muted">Módulo criado por Ricardo Dias, Leonor Gomes, Matilde Varela, Henrique Ferreira e Adrian De Freitas. Ilustração do farol desenhada em SVG pelo grupo.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#FF6600"/><path d="M12.5 33.5c4-9 10.5 2 15.5-6.5s7.5-6 8-12.5" fill="none" stroke="#1B1612" stroke-width="3.6" stroke-linecap="round"/><circle cx="12.5" cy="33.5" r="3.4" fill="#1B1612"/><circle cx="36" cy="14.5" r="3.4" fill="#FFFFFF" stroke="#1B1612" stroke-width="2"/></svg><strong>Percurso CAMUL</strong></div>
+        <p>Portefólio multimédia do Grupo 2 na unidade curricular de Conceção e Autoria Multimédia (CAMUL) do Instituto Superior de Engenharia do Porto, ano letivo de 2026/2027.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <h2>Conteúdos</h2>
+        <ul>
+          <li><a href="cor.html">Estudo da cor: laranja</a></li>
+          <li><a href="composicao.html">Composição visual</a></li>
+          <li><a href="avatares.html">Avatares IA</a></li>
+          <li><a href="mooc.html">MOOC: apoio a pessoas com deficiência visual</a></li>
+          <li><a href="processo.html">Processo</a></li>
+          <li><a href="equipa.html">Equipa e projeto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Acessibilidade</h2>
+        <ul>
+          <li><a href="acessibilidade.html">Declaração de acessibilidade</a></li>
+          <li><a href="acessibilidade.html#como-usar">Como ajustar a leitura</a></li>
+          <li><a href="#conteudo">Voltar ao início da página</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Grupo 2: Adrian De Freitas, Henrique Ferreira, Leonor Gomes, Matilde Varela e Ricardo Dias. Trabalho académico sem fins comerciais.</p>
+      <p>As marcas e as personagens citadas no estudo da cor pertencem aos respetivos titulares e são usadas apenas para análise académica.</p>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+</body>
+</html>
