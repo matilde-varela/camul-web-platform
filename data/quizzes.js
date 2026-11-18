@@ -17,7 +17,7 @@ window.QUIZZES = {
 
   /* ------------------------------------------------------------------ */
   licao1: {
-    title: 'Teste 1 — Primeiro contacto',
+    title: 'Teste — Primeiro contacto',
     intro: 'Três perguntas de cenário. Cada opção, certa ou errada, tem uma justificação ligada às 5 regras da lição.',
     questions: [
       {
@@ -55,7 +55,7 @@ window.QUIZZES = {
 
   /* ------------------------------------------------------------------ */
   licao2: {
-    title: 'Teste 2 — Receção e registo',
+    title: 'Teste — Receção e registo',
     intro: 'Três perguntas de escolha múltipla e uma de seleção múltipla. Veja a justificação de cada opção.',
     questions: [
       {
@@ -101,7 +101,7 @@ window.QUIZZES = {
 
   /* ------------------------------------------------------------------ */
   licao3: {
-    title: 'Trabalho de casa — Decisões de percurso',
+    title: 'Teste — Decisões de percurso',
     intro: 'Quatro perguntas sobre como guiar uma pessoa recém-evacuada num centro que ainda não conhece.',
     questions: [
       {
@@ -147,7 +147,7 @@ window.QUIZZES = {
 
   /* ------------------------------------------------------------------ */
   licao4: {
-    title: 'Teste final — Acesso a apoios essenciais',
+    title: 'Teste — Acesso a apoios essenciais',
     intro: 'Cinco perguntas sobre filas, senhas e acesso à alimentação, à saúde e ao apoio social.',
     questions: [
       {
@@ -202,7 +202,7 @@ window.QUIZZES = {
 
   /* ------------------------------------------------------------------ */
   licao5: {
-    title: 'Trabalho de casa — Decisões de segurança',
+    title: 'Teste — Decisões de segurança',
     intro: 'Três perguntas de cenário sobre riscos, alertas acessíveis e evacuação.',
     questions: [
       {

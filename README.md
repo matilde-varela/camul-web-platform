@@ -81,10 +81,12 @@ para descarregar). As outras páginas (Cor, Composição, Avatares…) não têm
       estão marcadas como `[impercetível]` ou `[diálogo pouco audível]`. Quem gravou deve confirmar essas partes.
 - [ ] Na aula da Lição 3 (0:37–2:11), os diapositivos «Princípios fundamentais» e «Apresentar, oferecer e
       posicionar» aparecem trocados em relação à narração. Os capítulos seguem a narração.
-- [ ] Vídeo de apresentação da página inicial e vídeos dos cinco avatares (D-ID). Na página dos avatares está, para já,
-      a gravação real do Adrian (`assets/video/avatar-adrian.mp4`), usada para criar o avatar dele.
-- [ ] Endereço do curso na Udemy (`udemyUrl` em `data/mooc.js`).
-- [ ] Ligação Matterport da Lição 5, se existir (não vinha na pasta entregue da Lição 5).
+- [x] Vídeo de apresentação da página inicial e avatares do Henrique, da Leonor e do Adrian (`assets/video/avatar/`).
+- [ ] Vídeos dos avatares do Ricardo e da Matilde (D-ID).
+- [ ] Legendas e transcrição dos vídeos dos avatares e do vídeo da página inicial. A `avatar-adrian.vtt` era da
+      gravação real do Adrian, que foi substituída pelo avatar, e já não é usada.
+- [x] Endereço do curso na Udemy (`udemyUrl` em `data/mooc.js`).
+- [x] Ligação Matterport da Lição 5 (`matterport` da unidade 3 em `data/mooc.js`).
 - [ ] **Rever** os textos marcados como «a validar» em `data/quizzes.js` (justificações das Lições 3 e 5,
       perguntas da Lição 4) e as transcrições em `data/mooc.js`.
 - [ ] Rever as legendas automáticas em `assets/captions/`.

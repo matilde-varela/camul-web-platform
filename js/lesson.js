@@ -20,7 +20,7 @@
     video: { label: 'Vídeo', icon: 'video' },
     article: { label: 'Artigo', icon: 'text' },
     interactive: { label: 'Interação ativa', icon: 'cube' },
-    quiz: { label: 'Questionário', icon: 'quiz' }
+    quiz: { label: 'Teste', icon: 'quiz' }
   };
 
   if (!lesson) {
@@ -72,17 +72,23 @@
 
   /* ---------- índice + unidades ----------
      A avaliação (unidades 'quiz') fica sempre no fim da lição,
-     depois dos recursos para descarregar. */
+     depois dos recursos para descarregar.
+     A lição mostra uma unidade de cada vez: o índice fica parado ao lado
+     e cada entrada abre a respetiva unidade. */
   var hasResources = !!(lesson.resources && lesson.resources.length);
+  /* O rótulo de cada unidade é gerado a partir da ordem e do tipo, para ser igual em todas as lições:
+     «Unidade N · Vídeo», «· Artigo», «· Interação ativa» ou «· Teste». */
+  lesson.units.forEach(function (u, i) { u.label = 'Unidade ' + (i + 1) + ' · ' + (KIND[u.kind] || KIND.video).label; });
   var contentUnits = lesson.units.filter(function (u) { return u.kind !== 'quiz'; });
   var quizUnits = lesson.units.filter(function (u) { return u.kind === 'quiz'; });
-  function tocItem(u) {
-    return '<li><a href="#' + u.id + '"><span class="toc-type">' + esc(u.label) + '</span>' + esc(u.title) + '</a></li>';
-  }
+  function step(u) { return { id: u.id, label: u.label, title: u.title }; }
+  var order = contentUnits.map(step)
+    .concat(hasResources ? [{ id: 'recursos', label: 'Materiais', title: 'Recursos para descarregar' }] : [])
+    .concat(quizUnits.map(step));
   var toc = '<nav class="toc" aria-labelledby="toc-title"><h2 id="toc-title">Nesta lição</h2><ol>' +
-    contentUnits.map(tocItem).join('') +
-    (hasResources ? '<li><a href="#recursos"><span class="toc-type">Materiais</span>Recursos para descarregar</a></li>' : '') +
-    quizUnits.map(tocItem).join('') +
+    order.map(function (o) {
+      return '<li><a href="#' + esc(o.id) + '"><span class="toc-type">' + esc(o.label) + '</span>' + esc(o.title) + '</a></li>';
+    }).join('') +
     '</ol></nav>';
 
   html += '<div class="container lesson-layout">' + toc + '<div class="lesson-content" id="unidades"></div></div>';
@@ -137,25 +143,22 @@
   function renderInteractive(sec, u) {
     if (u.video) sec.appendChild(PC.video(u.video));
     if (u.matterport) {
-      var slotId = u.id + '-embed';
-      var card = PC.el(
+      var mpTitle = u.matterportTitle || 'espaço do centro de acolhimento';
+      /* A visita fica logo incorporada à direita. Sem «play=1», o Matterport mostra primeiro o ecrã inicial
+         e só carrega o modelo e movimenta a câmara quando a pessoa carrega em «play». */
+      sec.appendChild(PC.el(
         '<div class="panel"><div class="matterport-card"><div>' +
-          '<h3>' + icon('cube') + ' Visita 3D: ' + esc(u.matterportTitle || 'espaço do centro de acolhimento') + '</h3>' +
+          '<h3>' + icon('cube') + ' Visita 3D: ' + esc(mpTitle) + '</h3>' +
           '<p>Modelo 3D interativo criado com o Matterport. Pode percorrer o espaço e abrir os pontos assinalados (Tags).</p>' +
           '<div class="callout callout-warn" style="margin:0 0 1rem">' + icon('info') +
             '<p>O modelo 3D é navegado com rato ou toque e não é acessível a leitores de ecrã. <strong>Todo o seu conteúdo está disponível em texto, mais abaixo.</strong> A visita contém movimento de câmara.</p></div>' +
           '<div class="btn-row">' +
             '<a class="btn btn-primary" href="' + esc(u.matterport) + '" target="_blank" rel="noopener">' + icon('external') + 'Abrir a visita 3D<span class="visually-hidden"> (abre num novo separador)</span></a>' +
-            '<button type="button" class="btn btn-secondary" data-embed-src="' + esc(u.matterport) + '&amp;play=1" data-embed-slot="' + slotId + '" data-embed-title="Visita 3D Matterport: ' + esc(u.matterportTitle || '') + '">' + icon('play') + 'Carregar a visita nesta página</button>' +
           '</div>' +
-        '</div><div>' +
-          '<div class="embed-slot" id="' + slotId + '" hidden></div>' +
-        '</div></div></div>'
-      );
-      var right = card.querySelector('.matterport-card > div:last-child');
-      if (u.preview) right.insertBefore(PC.video(u.preview), right.firstChild);
-      else card.querySelector('.matterport-card').classList.add('is-single');
-      sec.appendChild(card);
+        '</div>' +
+        '<div class="embed-slot"><iframe src="' + esc(u.matterport) + '" title="Visita 3D Matterport: ' + esc(mpTitle) + '" loading="lazy" allow="fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>' +
+        '</div></div>'
+      ));
     }
     if (u.tags && u.tags.length) {
       sec.appendChild(PC.el('<div><h3>' + esc(u.tagsTitle || 'Pontos da visita') + '</h3><ol class="tags-list">' +
@@ -201,34 +204,83 @@
   /* ---------- avaliação: no fim da lição ---------- */
   quizUnits.forEach(renderUnit);
 
-  /* ---------- navegação entre lições ---------- */
-  content.appendChild(PC.el('<nav class="lesson-pager" aria-label="Outras lições">' +
-    (prev ? '<a class="pager-link" href="licao-' + prev.n + '.html"><small>' + icon('arrow-left') + ' Lição anterior</small><strong>' + prev.n + '. ' + esc(prev.title) + '</strong></a>' : '<a class="pager-link" href="mooc.html"><small>' + icon('arrow-left') + ' Voltar</small><strong>Visão geral do MOOC</strong></a>') +
-    (next ? '<a class="pager-link pager-next" href="licao-' + next.n + '.html"><small>Lição seguinte ' + icon('arrow-right') + '</small><strong>' + next.n + '. ' + esc(next.title) + '</strong></a>' : '<a class="pager-link pager-next" href="processo.html"><small>A seguir ' + icon('arrow-right') + '</small><strong>Como fizemos o MOOC</strong></a>') +
-  '</nav>'));
-
   PC.initEmbedButtons(app);
 
-  /* ---------- realçar no índice a unidade visível ---------- */
-  if ('IntersectionObserver' in window) {
-    var links = app.querySelectorAll('.toc a');
-    var map = {};
-    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          links.forEach(function (a) { a.removeAttribute('aria-current'); });
-          var a = map[e.target.id];
-          if (a) a.setAttribute('aria-current', 'true');
-        }
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    app.querySelectorAll('.unit').forEach(function (s) { io.observe(s); });
+  /* ---------- uma unidade de cada vez ---------- */
+  var sections = order.map(function (o) { return document.getElementById(o.id); });
+  var links = Array.prototype.slice.call(app.querySelectorAll('.toc a'));
+  var current = -1;
+
+  /* «anterior / seguinte» no fim de cada unidade; nas pontas, passa para a lição ao lado */
+  var prevLesson = prev
+    ? '<a class="pager-link" href="licao-' + prev.n + '.html"><small>' + icon('arrow-left') + ' Lição anterior</small><strong>' + prev.n + '. ' + esc(prev.title) + '</strong></a>'
+    : '<a class="pager-link" href="mooc.html"><small>' + icon('arrow-left') + ' Voltar</small><strong>Visão geral do MOOC</strong></a>';
+  var nextLesson = next
+    ? '<a class="pager-link pager-next" href="licao-' + next.n + '.html"><small>Lição seguinte ' + icon('arrow-right') + '</small><strong>' + next.n + '. ' + esc(next.title) + '</strong></a>'
+    : '<a class="pager-link pager-next" href="processo.html"><small>A seguir ' + icon('arrow-right') + '</small><strong>Como fizemos o MOOC</strong></a>';
+  sections.forEach(function (sec, i) {
+    var b = order[i - 1], a = order[i + 1];
+    sec.appendChild(PC.el('<nav class="lesson-pager" aria-label="Navegar na lição">' +
+      (b ? '<a class="pager-link" href="#' + esc(b.id) + '"><small>' + icon('arrow-left') + ' Anterior: ' + esc(b.label) + '</small><strong>' + esc(b.title) + '</strong></a>' : prevLesson) +
+      (a ? '<a class="pager-link pager-next" href="#' + esc(a.id) + '"><small>Seguinte: ' + esc(a.label) + ' ' + icon('arrow-right') + '</small><strong>' + esc(a.title) + '</strong></a>' : nextLesson) +
+    '</nav>'));
+    var h = sec.querySelector('h2');
+    if (h) h.setAttribute('tabindex', '-1');
+  });
+
+  /* pára vídeos e áudio da unidade que deixa de se ver */
+  function pauseMedia(sec) {
+    sec.querySelectorAll('video, audio').forEach(function (m) { if (!m.paused) m.pause(); });
+    sec.querySelectorAll('iframe[src*="youtube"]').forEach(function (f) {
+      try { f.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*'); } catch (e) {}
+    });
   }
 
-  /* se o endereço tiver #unidade, saltar para lá depois de construir a página */
-  if (location.hash) {
-    var target = document.getElementById(location.hash.slice(1));
-    if (target) target.scrollIntoView();
+  function show(k) {
+    if (k === current) return;
+    sections.forEach(function (sec, i) {
+      if (i !== k && !sec.hidden) pauseMedia(sec);
+      sec.hidden = i !== k;
+    });
+    links.forEach(function (a, i) {
+      if (i === k) a.setAttribute('aria-current', 'step');
+      else a.removeAttribute('aria-current');
+    });
+    current = k;
   }
+
+  /* abre a unidade que contém o elemento #id; devolve false se não for de nenhuma */
+  function openTarget(id, fromUser) {
+    var el = id ? document.getElementById(id) : null;
+    var sec = el && el.closest('.unit');
+    var k = sections.indexOf(sec);
+    if (k < 0) return false;
+    show(k);
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    if (el === sec) {
+      /* nova unidade: começa no topo, com o índice ao lado */
+      content.scrollIntoView({ block: 'start' });
+      if (fromUser) sec.querySelector('h2').focus({ preventScroll: true });
+    } else {
+      el.scrollIntoView({ block: 'start' });
+    }
+    return true;
+  }
+
+  /* índice, botões «anterior / seguinte» e ligações internas (#recursos, …) */
+  app.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest('a[href^="#"]');
+    if (a && openTarget(decodeURIComponent(a.getAttribute('href').slice(1)), true)) e.preventDefault();
+  });
+  window.addEventListener('hashchange', function () {
+    openTarget(decodeURIComponent(location.hash.slice(1)), false);
+  });
+
+  /* Esconde as outras unidades só no frame seguinte: o media.js decide nesse frame
+     se abre os capítulos ao lado do vídeo, e precisa de ver o vídeo com tamanho real. */
+  requestAnimationFrame(function () {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!openTarget(id, false)) show(0);
+  });
 })();

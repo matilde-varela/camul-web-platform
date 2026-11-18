@@ -31,7 +31,7 @@
 
     var root = PC.el(
       '<section class="quiz" aria-labelledby="' + qid + '-t">' +
-        '<div class="quiz-head"><h3 id="' + qid + '-t">' + PC.esc(data.title || 'Questionário') + '</h3>' +
+        '<div class="quiz-head"><h3 id="' + qid + '-t">' + PC.esc(data.title || 'Teste') + '</h3>' +
         '<p class="quiz-step" data-step></p></div>' +
         (data.intro ? '<p class="quiz-intro">' + PC.esc(data.intro) + '</p>' : '') +
         '<div class="quiz-progress" aria-hidden="true"><span data-bar style="width:0"></span></div>' +
@@ -205,7 +205,7 @@
               '<span><strong>Pergunta ' + (i + 1) + ' — ' + label + '.</strong> ' + PC.esc(q.prompt) + '</span></li>';
           }).join('') + '</ul>' +
           '<div class="btn-row">' +
-            '<button type="button" class="btn btn-primary" data-retry>' + PC.icon('rotate') + 'Repetir o questionário</button>' +
+            '<button type="button" class="btn btn-primary" data-retry>' + PC.icon('rotate') + 'Repetir o teste</button>' +
             '<button type="button" class="btn btn-secondary" data-review aria-expanded="false" aria-controls="' + qid + '-review">' + PC.icon('text') + 'Rever todas as explicações</button>' +
           '</div>' +
           '<div class="quiz-review" id="' + qid + '-review" hidden>' + reviewHTML() + '</div>' +

@@ -25,7 +25,7 @@
   window.MOOC = {
     course: {
       title: 'Crises Humanitárias: Apoio a Pessoas com Deficiência Visual',
-      udemyUrl: null // ex.: 'https://www.udemy.com/course/…' — quando preenchido, aparece o botão «Aceder ao curso»
+      udemyUrl: 'https://www.udemy.com/course/crises-humanitarias-apoio-a-pessoas-com-deficiencia-visual/' // mostra o botão «Ver o curso na Udemy» em mooc.html
     },
 
     lessons: [
@@ -49,7 +49,7 @@
         ],
         units: [
           {
-            id: 'u1', kind: 'video', label: 'Unidade 1 · Vídeo', title: 'Regras gerais do primeiro contacto', duration: '3 min 40 s',
+            id: 'u1', kind: 'video', title: 'Regras gerais do primeiro contacto', duration: '3 min 40 s',
             intro: 'A mesma situação em duas versões encenadas (incorreta e correta), seguida da análise dos erros e das cinco regras.',
             video: {
               title: 'Regras gerais do primeiro contacto', duration: '3 min 40 s', src: 'assets/video/l1-u1-regras-primeiro-contacto.mp4', youtube: null,
@@ -87,7 +87,7 @@
             }
           },
           {
-            id: 'u2', kind: 'article', label: 'Unidade 2 · Artigo', title: 'As 5 regras do primeiro contacto, por escrito', duration: '2 min 25 s de leitura',
+            id: 'u2', kind: 'article', title: 'As 5 regras do primeiro contacto, por escrito', duration: '2 min 25 s de leitura',
             html:
               '<h3>Introdução e contexto</h3>' +
               '<p>O primeiro contacto é o momento que define a qualidade de toda a interação que se segue. Para uma pessoa cega ou com visão reduzida, a forma como alguém se aproxima, fala e oferece ajuda pode transmitir segurança e respeito ou, pelo contrário, insegurança e desconfiança.</p>' +
@@ -111,7 +111,7 @@
               '<p class="rule-box">Em conjunto, estas regras assentam num princípio simples: a pessoa cega ou com visão reduzida é quem decide. Cabe ao ajudante informar, perguntar e acompanhar — nunca decidir por ela.</p>'
           },
           {
-            id: 'u3', kind: 'interactive', label: 'Unidade 3 · Interação ativa', title: 'Explorar a sala de apoio do centro de acolhimento', duration: '3 min 27 s + exploração livre',
+            id: 'u3', kind: 'interactive', title: 'Explorar a sala de apoio do centro de acolhimento', duration: '3 min 27 s + exploração livre',
             intro: 'Um vídeo narrado percorre os seis pontos assinalados (Tags) da sala de apoio. Depois, pode explorar o mesmo espaço em 3D, ao seu ritmo. Cada ponto coloca uma pergunta de reflexão e indica os cuidados a ter.',
             video: {
               title: 'Cuidados a ter após o primeiro contacto', duration: '3 min 27 s', src: 'assets/video/l1-u3-cuidados-apos-primeiro-contacto.mp4', youtube: null,
@@ -141,7 +141,6 @@
             },
             matterport: MP + '8osidpG5rie',
             matterportTitle: 'Sala de apoio — abrigo para pessoas em refúgio forçado',
-            preview: { title: 'Excerto da visita 3D à sala de apoio (sem som)', duration: '13 s', src: 'assets/video/l1-matterport.mp4', note: 'Excerto silencioso que mostra a navegação pelo modelo 3D: a câmara percorre a sala de apoio e os pontos assinalados.' },
             tagsTitle: 'Os seis pontos da visita (alternativa em texto ao modelo 3D)',
             tags: [
               { title: 'Receção e inscrição', question: 'Aqui a pessoa dá os seus dados e recebe informação importante. Como saberia a pessoa cega que chegou ao sítio certo? Como preencheria ou assinaria os documentos?', helps: 'Dizer o que está a fazer e o que vem a seguir; ler em voz alta os documentos e os campos; oferecer ajuda para assinar; não pressupor incapacidade.' },
@@ -165,7 +164,7 @@
               ]
             }
           },
-          { id: 'u4', kind: 'quiz', label: 'Unidade 4 · Teste 1', title: 'Prática: perguntas de cenário', duration: 'cerca de 1 min 15 s', quiz: 'licao1' }
+          { id: 'u4', kind: 'quiz', title: 'Prática: perguntas de cenário', duration: 'cerca de 1 min 15 s', quiz: 'licao1' }
         ],
         resources: [
           { title: 'Primeiro contacto com uma pessoa cega — material complementar', href: 'assets/docs/l1-primeiro-contacto-pessoa-cega.pdf', meta: 'PDF, 3 páginas, 700 kB' }
@@ -190,7 +189,7 @@
         ],
         units: [
           {
-            id: 'u1', kind: 'video', label: 'Unidade 1 · Vídeo', title: 'Receção e registo', duration: '5 min 38 s',
+            id: 'u1', kind: 'video', title: 'Receção e registo', duration: '5 min 38 s',
             intro: 'Dois exemplos encenados de registo no centro de acolhimento: o processo incorreto e o processo correto, com a análise do que correu mal e do que correu bem.',
             video: {
               title: 'Receção e registo', duration: '5 min 38 s', src: 'assets/video/l2-u1-rececao-registo.mp4', youtube: null,
@@ -232,7 +231,7 @@
             }
           },
           {
-            id: 'u2', kind: 'article', label: 'Unidade 2 · Artigo', title: 'Receção e registo acessíveis', duration: '2 min 40 s de leitura',
+            id: 'u2', kind: 'article', title: 'Receção e registo acessíveis', duration: '2 min 40 s de leitura',
             html:
               '<p>O balcão de registo é, muitas vezes, o primeiro sítio onde uma pessoa evacuada tem de tomar decisões sobre si própria. Para uma pessoa cega, um contrato em papel, um balcão desconhecido e uma fila atrás de si podem transformar um procedimento simples numa experiência de perda de controlo. Este artigo resume os cuidados mostrados no vídeo.</p>' +
               '<h3>1. Explicar antes de pedir</h3>' +
@@ -248,7 +247,7 @@
               '<p>Nos recursos desta lição encontra o contrato em versão acessível (e a versão normal, para comparação) e os cartazes preparados para o centro de acolhimento.</p>'
           },
           {
-            id: 'u3', kind: 'interactive', label: 'Unidade 3 · Interação ativa', title: 'Explorar a receção do centro de acolhimento', duration: '2 min 30 s + exploração livre',
+            id: 'u3', kind: 'interactive', title: 'Explorar a receção do centro de acolhimento', duration: '2 min 30 s + exploração livre',
             intro: 'Um vídeo percorre a sala de espera, o balcão de receção e o espaço privado para conversas, a partir das necessidades de uma pessoa refugiada cega. O mesmo conteúdo está disponível no modelo 3D e, abaixo, em texto.',
             video: {
               title: 'Exploração da receção do centro de acolhimento', duration: '2 min 30 s',
@@ -292,7 +291,7 @@
               ]
             }
           },
-          { id: 'u4', kind: 'quiz', label: 'Unidade 4 · Teste 2', title: 'Prática: perguntas de cenário e síntese', duration: 'cerca de 1 min 40 s', quiz: 'licao2' }
+          { id: 'u4', kind: 'quiz', title: 'Prática: perguntas de cenário e síntese', duration: 'cerca de 1 min 40 s', quiz: 'licao2' }
         ],
         resources: [
           { title: 'Contrato de acolhimento — versão acessível', href: 'assets/docs/l2-contrato-acessivel.pdf', meta: 'PDF, 7 páginas, 300 kB' },
@@ -320,7 +319,7 @@
         ],
         units: [
           {
-            id: 'u1', kind: 'video', label: 'Unidade 1 · Vídeos', title: 'Guiar com apoio humano e orientação verbal', duration: '7 min 49 s',
+            id: 'u1', kind: 'video', title: 'Guiar com apoio humano e orientação verbal', duration: '7 min 49 s',
             intro: 'Primeiro, uma aula com diapositivos explica os princípios do guia vidente: o primeiro contacto, a posição de quem guia, a linguagem a usar, o cão-guia, as passagens estreitas, as escadas e as cadeiras. Depois, um vídeo demonstrativo mostra a forma errada e a forma certa de guiar uma pessoa cega no centro de acolhimento.',
             video: {
               title: 'Princípios do guia vidente', duration: '6 min 13 s',
@@ -400,7 +399,7 @@
               '</tbody></table></div>'
           },
           {
-            id: 'u2', kind: 'interactive', label: 'Unidade 2 · Interação ativa', title: 'Explorar o percurso do centro', duration: '2 min 30 s + exploração livre',
+            id: 'u2', kind: 'interactive', title: 'Explorar o percurso do centro', duration: '2 min 30 s + exploração livre',
             intro: 'Aplique as regras de guia num centro realista: identifique pontos de referência, escolha um percurso claro, antecipe obstáculos e escolha formas respeitadoras de oferecer ajuda. Em cada ponto há uma decisão para tomar.',
             matterport: MP + 'WxRQNQh4oVo',
             matterportTitle: 'Percurso do centro de acolhimento',
@@ -412,7 +411,7 @@
               { title: 'Chegada à distribuição de bens', question: 'Chegaram ao destino. E agora?', helps: 'Anunciar a chegada, explicar a disposição do espaço e perguntar se a pessoa quer mais ajuda.' }
             ]
           },
-          { id: 'u3', kind: 'quiz', label: 'Unidade 3 · Trabalho de casa', title: 'Decisões de percurso e conclusão', duration: 'cerca de 2 min 30 s', quiz: 'licao3' }
+          { id: 'u3', kind: 'quiz', title: 'Decisões de percurso e conclusão', duration: 'cerca de 2 min 30 s', quiz: 'licao3' }
         ],
         resources: []
       },
@@ -436,7 +435,7 @@
         ],
         units: [
           {
-            id: 'u1', kind: 'video', label: 'Unidade 1 · Vídeo', title: 'Acessibilidade geral: acompanhamento, filas e senhas', duration: '5 min 21 s',
+            id: 'u1', kind: 'video', title: 'Acessibilidade geral: acompanhamento, filas e senhas', duration: '5 min 21 s',
             intro: 'Uma pessoa chega a um centro com uma fila desorganizada e um sistema de senhas apenas visual. Que erros se cometem e como se ajuda sem comprometer a autonomia?',
             video: {
               title: 'Acessibilidade geral: acompanhamento, filas e senhas', duration: '5 min 21 s', src: 'assets/video/l4-u1-filas-senhas.mp4', youtube: null,
@@ -482,7 +481,7 @@
             ]
           },
           {
-            id: 'u2', kind: 'video', label: 'Unidade 2 · Vídeo', title: 'Acesso a bens alimentares, saúde e segurança social', duration: '3 min 21 s',
+            id: 'u2', kind: 'video', title: 'Acesso a bens alimentares, saúde e segurança social', duration: '3 min 21 s',
             intro: 'Três cenários: a recolha de bens num ponto de distribuição, o encaminhamento para postos médicos e o apoio nos serviços sociais.',
             video: {
               title: 'Acesso a bens alimentares, serviços de saúde e serviços de segurança social', duration: '3 min 21 s',
@@ -504,11 +503,10 @@
             }
           },
           {
-            id: 'u3', kind: 'interactive', label: 'Unidade 3 · Trabalho de casa', title: 'Cenário 3D e resumo da lição', duration: 'cerca de 6 min',
+            id: 'u3', kind: 'interactive', title: 'Cenário 3D e resumo da lição', duration: 'cerca de 6 min',
             intro: 'Aplique o que aprendeu num cenário 3D simulado de um serviço para pessoas evacuadas. O manual de apoio resume todas as regras desta lição.',
             matterport: MP + '9gJEGVfke7t',
             matterportTitle: 'Serviço de apoio para pessoas evacuadas',
-            preview: { title: 'Animação do cenário 3D (sem som)', duration: '11 s', src: 'assets/video/l4-matterport.mp4', note: 'Animação silenciosa de apresentação do modelo 3D desta lição.' },
             alternativeHtml:
               '<h4>Resumo das regras (alternativa em texto)</h4>' +
               '<ul class="check-list">' +
@@ -521,7 +519,7 @@
                 '<li><strong>Cão-guia e bengala:</strong> não tocar no cão nem lhe dar comida, e não puxar a bengala.</li>' +
               '</ul>'
           },
-          { id: 'u4', kind: 'quiz', label: 'Unidade 3 · Questionário', title: 'Teste final da lição', duration: 'cerca de 2 min', quiz: 'licao4' }
+          { id: 'u4', kind: 'quiz', title: 'Teste final da lição', duration: 'cerca de 2 min', quiz: 'licao4' }
         ],
         resources: [
           { title: 'Manual de acessibilidade a serviços essenciais', href: 'assets/docs/l4-manual-acessibilidade-servicos-essenciais.pdf', meta: 'PDF, 2 páginas, 177 kB' },
@@ -549,7 +547,7 @@
         ],
         units: [
           {
-            id: 'u1', kind: 'video', label: 'Unidade 1 · Vídeo', title: 'Reconhecer riscos e dar alertas acessíveis', duration: '6 min 56 s',
+            id: 'u1', kind: 'video', title: 'Reconhecer riscos e dar alertas acessíveis', duration: '6 min 56 s',
             intro: 'Um exemplo encenado do que pode correr mal numa emergência, a análise passo a passo dos erros e a forma correta de prestar apoio.',
             video: {
               title: 'Reconhecer riscos e dar alertas acessíveis', duration: '6 min 56 s',
@@ -602,7 +600,7 @@
             }
           },
           {
-            id: 'u2', kind: 'article', label: 'Unidade 2 · Artigo', title: 'Segurança acessível: identificar, alertar, apoiar', duration: 'cerca de 4 min de leitura',
+            id: 'u2', kind: 'article', title: 'Segurança acessível: identificar, alertar, apoiar', duration: 'cerca de 4 min de leitura',
             html:
               '<figure><img src="assets/img/l5-introducao.webp" alt="Pernas de uma pessoa com bengala branca a caminhar num corredor de piso brilhante." loading="lazy"><figcaption>Pequenas alterações no espaço podem tornar um percurso inseguro.</figcaption></figure>' +
               '<p>Num contexto de crise ou emergência, os espaços podem mudar rapidamente. Uma cadeira pode ser deslocada, um cabo pode ficar no chão, uma passagem pode ser encerrada ou um aviso importante pode existir apenas em formato visual. Para uma pessoa cega ou com baixa visão, estas alterações podem transformar um percurso habitual num percurso inseguro.</p>' +
@@ -634,9 +632,10 @@
               '<p>Uma pequena alteração no espaço, ou na forma como comunicamos, pode fazer uma grande diferença na segurança e na autonomia de uma pessoa cega ou com baixa visão.</p>'
           },
           {
-            id: 'u3', kind: 'interactive', label: 'Unidade 3 · Interação ativa', title: 'Percurso seguro e zona de emergência', duration: 'cerca de 2 min 30 s',
+            id: 'u3', kind: 'interactive', title: 'Percurso seguro e zona de emergência', duration: 'cerca de 2 min 30 s',
             intro: 'Quatro situações num corredor do centro de acolhimento. Em cada uma, pense no que comunicaria e faria antes de ler a resposta.',
-            matterport: null,
+            matterport: MP + 'mZu97jXjF7g',
+            matterportTitle: 'Caminho em situação de emergência',
             tagsTitle: 'Quatro situações para decidir',
             tags: [
               { title: 'Cabo no corredor e cadeira deslocada', question: 'Que perigo comunica e como impede o acesso, sem se pôr em risco?', helps: 'Nomear o perigo, a localização e a ação segura («Pare, por favor. Há um cabo no chão, à sua frente.»); se for seguro e autorizado, remover ou isolar o obstáculo; caso contrário, assinalá-lo e comunicá-lo aos responsáveis.' },
@@ -647,7 +646,7 @@
             alternativeHtml:
               '<figure class="figure"><img src="assets/img/l5-identificarriscos.webp" alt="Cinco fotografias de perigos comuns: cabos no chão, mobiliário deslocado, objetos na passagem, portas obstruídas e degraus." loading="lazy"><figcaption>Perigos a procurar num percurso: cabos no chão, mobiliário deslocado, objetos na passagem, portas obstruídas e degraus.</figcaption></figure>'
           },
-          { id: 'u4', kind: 'quiz', label: 'Unidade 3 · Trabalho de casa', title: 'Decisões de segurança e conclusão', duration: 'cerca de 2 min', quiz: 'licao5' }
+          { id: 'u4', kind: 'quiz', title: 'Decisões de segurança e conclusão', duration: 'cerca de 2 min', quiz: 'licao5' }
         ],
         resources: [
           { title: 'Cartão de frases e alertas acessíveis', href: 'assets/docs/l5-cartao-frases-alertas-acessiveis.pdf', meta: 'PDF, 1 página, 48 kB' },
